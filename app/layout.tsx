@@ -1,17 +1,9 @@
 import type { Metadata } from "next";
-import urbanist from "next/font/local";
+import  { Urbanist }  from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/navbar"; 
 
-const geistSans = urbanist({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = urbanist({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+const urbanist = Urbanist({subsets: ["latin"]});
 
 export const metadata: Metadata = {
   title: "Santech Dev - Portafolio",
@@ -26,9 +18,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+        className={urbanist.className}>
+          {children}
+          <Navbar />
       </body>
     </html>
   );

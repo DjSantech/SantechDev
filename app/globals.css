@@ -8,7 +8,13 @@ html, body {
 }
 
 main {
-  background:#df12fa ;
+  background:#830494 ;
   height: 100vh;
-  height: 1;
+  height: 100dvh;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
 }
