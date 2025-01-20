@@ -1,19 +1,19 @@
 import type { Metadata } from "next";
-import  { Urbanist }  from "next/font/google";
+import { Urbanist } from "next/font/google";
+
 import "./globals.css";
-import 'Swiper/css' 
-import 'Swiper/css/pagination' 
-import 'Swiper/css/scrollbar' 
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
 
-import Navbar from "@/components/navbar"; 
+import Navbar from "@/components/navbar";
 import Header from "@/components/header";
-import Introduction from "@/components/introduction";
 
-const urbanist = Urbanist({subsets: ["latin"]});
+const urbanist = Urbanist({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Santech Dev - Portafolio",
-  description: "Santech Dev Project Portfolio",
+  title: "TarreDev Landing Page",
+  description: "Landing page made by TarreDev",
 };
 
 export default function RootLayout({
@@ -23,12 +23,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={urbanist.className}>
-          {children}
-          <Navbar />
-          <Header/>
-          
+      <body className={urbanist.className}>
+        <Navbar />
+        <Header />
+        {children}
       </body>
     </html>
   );
