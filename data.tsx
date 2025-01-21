@@ -1,30 +1,27 @@
-import { BookText, CodeSquare, HomeIcon, UserRound, Linkedin, Twitter, Rss, Twitch, Youtube, Crop, Pencil, Computer, Book, Rocket, Speech } from "lucide-react";
+import { BookText, CodeSquare, HomeIcon, UserRound, Linkedin, Twitter, Rss, Twitch, Youtube, Crop, Pencil, Computer, Book, Rocket, Speech, Github, Mail } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
+
 
 export const socialNetworks = [
     {
         id: 1,
-        logo: <Youtube size={30} strokeWidth={1} />,
-        src: "#!",
+        logo: <Github size={30} strokeWidth={1} />,
+        src: "https://github.com/DjSantech",
     },
     {
         id: 2,
         logo: <Linkedin size={30} strokeWidth={1} />,
-        src: "#!",
+        src: "https://www.linkedin.com/in/santiago-guevara-a15330283/",
     },
     {
         id: 3,
-        logo: <Twitter size={30} strokeWidth={1} />,
-        src: "#!",
+        logo: <Mail size={30} strokeWidth={1} />,
+        src: "mailto:santiguevara20161@gmail.com",
     },
     {
         id: 4,
-        logo: <Rss size={30} strokeWidth={1} />,
-        src: "#!",
-    },
-    {
-        id: 5,
-        logo: <Twitch size={30} strokeWidth={1} />,
-        src: "#!",
+        logo: <FaWhatsapp  size={30} strokeWidth={1} />,
+        src: "https://wa.me/3135995612",
     },
 ];
 
@@ -65,64 +62,71 @@ export const itemsNavbar = [
 export const dataAboutPage = [
     {
         id: 1,
-        title: "Frontend Developer",
-        subtitle: "TechSolutions",
-        description: "Colabora con un equipo dinámico para desarrollar interfaces de usuario atractivas y funcionales que impulsen el éxito de nuestros clientes en el mundo digital.",
-        date: "Nov 2023 ",
-    },
-    {
-        id: 2,
-        title: "Creador de Experiencias Digitales",
-        subtitle: "PixelCrafters",
-        description: "Trabaja en proyectos emocionantes que desafían los límites de la creatividad y la tecnología. Únete a nosotros mientras creamos experiencias digitales cautivadoras que inspiran y cautivan a nuestros usuarios.",
-        date: "May 2021",
+        title: "Database",
+        subtitle: "TurboCars",
+        description: "I created a website which is linked to a database in mysql for a company that needed to manage its inventory.",
+        date: "Oct 2024 ",
     },
     {
         id: 3,
-        title: "Especialista en Desarrollo Frontend",
-        subtitle: "CodeForge Solutions",
-        description: "Como desarrollador frontend, tendrás la oportunidad de colaborar en proyectos diversos y desafiantes que te permitirán expandir tus habilidades y dejar tu huella en el mundo digital.",
-        date: "Ago 2019",
+        title: "Freelance Web Developer",
+        subtitle: "programmer",
+        description: "As a freelance web developer, I have designed, developed and managed multiple websites tailored to the specific needs of various clients, enhancing their online presence.",
+        date: "July 2024",
+    },
+    {
+        id: 2,
+        title: "implementation of different games",
+        subtitle: "several companies",
+        description: "Implement different games such as chess, gallows, memory games for business activities.",
+        date: "Feb 2024",
     },
     {
         id: 4,
-        title: "Prácticas Grado",
-        subtitle: "WebWizards Inc.",
-        description: "Únete a nosotros mientras creamos sitios web y aplicaciones interactivas que sorprenden y deleitan a nuestros clientes. Si tienes pasión por el diseño y la programación, y disfrutas colaborar en un entorno creativo, ¡queremos conocerte!        ",
-        date: "Mar 2018",
+        title: "Bootcamp FullStacks ll",
+        subtitle: "technological university of pereira",
+        description: "I was in a web-oriented programming camp where I learned different technologies such as HTML, CSS, JAVASCRIPT, and different frameworks such as React",
+        date: "July 2023",
+    },
+    {
+        id: 5,
+        title: "University start",
+        subtitle: "technological university of pereira",
+        description: "I began studying my career as a systems and computing engineer, which I am still pursuing. ",
+        date: "Feb 2023",
     },
 ]
 
 export const dataCounter = [
     {
         id: 0,
-        endCounter: 10,
+        endCounter: 2,
         text: "Años de experiencia",
         lineRight: true,
         lineRightMobile: true,
     },
     {
         id: 1,
-        endCounter: 80,
+        endCounter: 10,
         text: "Clientes satisfechos",
         lineRight: true,
         lineRightMobile: false,
     },
     {
         id: 2,
-        endCounter: 220,
+        endCounter: 50,
         text: "Proyectos finalizados",
         lineRight: true,
         lineRightMobile: true,
     },
     {
         id: 3,
-        endCounter: 30,
-        text: "Premios ganadores",
+        endCounter: 400,
+        text: "Horas programando",
         lineRight: false,
         lineRightMobile: false,
     },
-];
+];  
 
 export const serviceData = [
     {
