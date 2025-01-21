@@ -101,28 +101,28 @@ export const dataCounter = [
     {
         id: 0,
         endCounter: 2,
-        text: "Años de experiencia",
+        text: "years of experience",
         lineRight: true,
         lineRightMobile: true,
     },
     {
         id: 1,
         endCounter: 10,
-        text: "Clientes satisfechos",
+        text: "Satisfied customers",
         lineRight: true,
         lineRightMobile: false,
     },
     {
         id: 2,
         endCounter: 50,
-        text: "Proyectos finalizados",
+        text: "Completed projects",
         lineRight: true,
         lineRightMobile: true,
     },
     {
         id: 3,
         endCounter: 400,
-        text: "Horas programando",
+        text: "Hours programming",
         lineRight: false,
         lineRightMobile: false,
     },
@@ -132,27 +132,22 @@ export const serviceData = [
     {
         icon: <Crop />,
         title: "Branding",
-        description: "Desarrollo de una identidad de marca sólida y coherente, incluyendo diseño de logotipo, colores y elementos visuales",
+        description: "Developing a strong and consistent brand identity, including logo design, colors and visual elements",
     },
     {
         icon: <Pencil />,
-        title: "Diseño web",
-        description: "Diseño creativo y profesional de interfaces web intuitivas y atractivas, centradas en la experiencia del usuario",
+        title: "web design",
+        description: "Creative and professional design of intuitive and attractive web interfaces, focused on user experience",
     },
     {
         icon: <Computer />,
-        title: "Desarrollo web",
-        description: "Diseño y desarrollo de sitios web a medida, adaptados a tus necesidades",
+        title: "web development",
+        description: "Design and development of custom websites, adapted to your needs",
     },
     {
         icon: <Book />,
         title: "Copywriting",
-        description: "Creación de contenido persuasivo y atractivo que capta la atención de tu audiencia",
-    },
-    {
-        icon: <Rocket />,
-        title: "SEO",
-        description: "Optimización de tu presencia en línea mediante estrategias de SEO avanzadas, ",
+        description: "Creating compelling and engaging content that captures your audience's attention",
     },
 ];
 

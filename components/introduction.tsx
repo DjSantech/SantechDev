@@ -8,16 +8,17 @@ const Introduction = () => {
             <div className="z-20 grid items-center h-full p-6 py-20 md:py-0 md:grid-cols-2">
                 <Image src="/home-4.png" priority width="800" height="800" alt="Avatar" />
                 <div className="flex flex-col justify-center max-w-md">
-                    <h1 className="mb-5 text-2xl leading-tight text-center md:text-left md:text-4xl md:mb-10">Si puedes pensarlo, <br />
+                    <h1 className="mb-5 text-2xl leading-tight text-center md:text-left md:text-4xl md:mb-10">
+                    If you can think it., <br />
                         <TypeAnimation
                             sequence={[
-                                'puedes programarlo',
+                                'you can program it,',
                                 1000,
-                                'puedes optimizarlo',
+                                'you can optimize it',
                                 1000,
-                                'puedes implementarlo',
+                                'you can implement it',
                                 1000,
-                                'puedes desarrollarlo',
+                                'you can develop it',
                                 1000
                             ]}
                             wrapper="span"
@@ -28,16 +29,17 @@ const Introduction = () => {
                     </h1>
 
                     <p className="mx-auto mb-2 text-xl md:text-xl md:mx-0 md:mb-8">
-                        Como desarrollador frontend y creador de contenido, me dedico a combinar diseño y funcionalidad para crear experiencias digitales impactantes y accesibles.
+                       
+                    As a frontend developer and content creator, I focus on combining design and functionality to create impactful and accessible digital experiences.
                     </p>
 
                     <div className="flex items-center justify-center gap-3 md:justify-start md:gap-10">
                         <a href="/portfolio" className="px-3 py-2 my-2 transition-all border-2 cursor-pointer text-md w-fit rounded-xl hover:shadow-xl hover:shadow-white/50">
-                            Ver proyectos
+                            View projects
                         </a>
                         <a href="mailto:santiguevara20161@gmail.com"
                             className="px-3 py-2 my-5 transition-all border-2 cursor-pointer text-md w-fit text-secondary border-secondary rounded-xl hover:shadow-xl hover:shadow-secondary" >
-                            Contacta conmigo
+                            Contact me
                         </a>
                     </div>
                 </div>
