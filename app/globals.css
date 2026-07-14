@@ -2,24 +2,39 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
 
-html,
 body {
-  /* height: 100%; */
+  background: #09090b;
   color: #fff;
-  background: #1f1934;
 }
 
-main {
-  background: #393a47;
-  height: 100vh;
-  height: 100dvh;
+::selection {
+  background-color: rgba(139, 92, 246, 0.35);
+  color: #fff;
 }
 
-.swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
-.swiper-pagination-horizontal.swiper-pagination-bullets
-  .swiper-pagination-bullet {
-  background-color: #f5741c;
+:focus-visible {
+  outline: 2px solid #a78bfa;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 @layer utilities {
