@@ -18,19 +18,19 @@ export const education: EducationItem[] = [
       "Formación intensiva orientada a la programación web con HTML, CSS, JavaScript y frameworks modernos como React.",
   },
   {
-    id: "certificacion-placeholder",
-    title: "Agrega aquí una certificación",
-    institution: "Plataforma o institución",
-    period: "Fecha",
-    description: "Espacio reservado para certificaciones (por ejemplo: freeCodeCamp, Platzi, Coursera, AWS, Meta).",
-    isPlaceholder: true,
+    id: "certificacion-bases-datos",
+    title: "Formación Profesional en Bases de Datos Relacionales (MySQL)",
+    institution: "Universidad Tecnológica de Pereira (UTP)",
+    period: "Diciembre 2024",
+    description:
+      "Estudios y aplicación práctica enfocada en diseño de esquemas, normalización de datos, consultas complejas e integración de bases de datos con aplicaciones web.",
   },
   {
-    id: "idiomas-placeholder",
-    title: "Agrega aquí tus idiomas",
-    institution: "Nivel de dominio",
-    period: "Certificación (si aplica)",
-    description: "Espacio reservado para idiomas (por ejemplo: Inglés — B2, certificado EF SET o similar).",
-    isPlaceholder: true,
+    id: "idioma-ingles",
+    title: "Inglés",
+    institution: "Nivel Intermedio (B1 - B2)",
+    period: "Lectura y documentación técnica",
+    description:
+      "Capacidad para comprender documentación oficial de software, consumir recursos técnicos globales en inglés y escribir código auto-documentado con buenas prácticas internacionales.",
   },
 ];

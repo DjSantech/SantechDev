@@ -46,6 +46,4 @@ export const techStack: TechCategory[] = [
   },
 ];
 
-export const learningNow: string[] = [
-  "Agrega aquí las tecnologías que estás aprendiendo actualmente",
-];
+export const learningNow: string[] = ["PostgreSQL", "NestJS"];

@@ -7,7 +7,7 @@ export const siteConfig = {
   name: "Santiago Guevara",
   brand: "SantechDev",
   role: "Frontend Developer",
-  roleKeywords: ["interfaces accesibles", "producto", "rendimiento", "experiencias premium"],
+  roleKeywords: ["interfaces accesibles", "flujo de trabajo", "rendimiento", "experiencias premium"],
   location: "Pereira, Colombia",
   email: "santiguevara20161@gmail.com",
   pitch:

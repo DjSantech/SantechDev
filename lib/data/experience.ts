@@ -3,11 +3,11 @@ import type { ExperienceItem } from "../types";
 export const experience: ExperienceItem[] = [
   {
     id: "practica-formal-placeholder",
-    role: "Agrega aquí tu próxima práctica o primer empleo",
-    place: "Nombre de la empresa",
+    role: "Desarrollador Frontend / Fullstack Junior",
+    place: "Tu Empresa Aquí · Pereira (Presencial / Híbrido / Remoto)",
     period: "Presente",
     description:
-      "Espacio reservado para tu primera experiencia laboral formal. Reemplázalo con el cargo, las responsabilidades principales y los resultados obtenidos.",
+      "Espacio reservado para mi primera experiencia profesional formal o práctica de Ingeniería de Sistemas. Listo para aportar soluciones con React, Next.js, TypeScript y gestión de bases de datos, asumiendo retos técnicos con metodologías ágiles.",
     isPlaceholder: true,
   },
   {

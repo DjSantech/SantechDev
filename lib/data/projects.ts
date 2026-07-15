@@ -32,12 +32,12 @@ export const projects: Project[] = [
       "Agrega aquí qué aprendiste (por ejemplo: conexión de Next.js con una base de datos relacional, diseño de esquemas).",
   },
   {
-    id: "proyecto-placeholder",
-    title: "Agrega aquí tu próximo proyecto",
+    id: "saas-gestion-clientes",
+    title: "Plataforma SaaS de Gestión de Clientes y Agendamiento",
     description:
-      "Espacio reservado para tu siguiente proyecto destacado. Reemplaza este texto con una descripción clara del problema que resuelve y para quién.",
+      "Un sistema diseñado para automatizar las reservas y el control de inventario de negocios de servicios. Resolverá el problema de la pérdida de tiempo en agendamientos manuales mediante un dashboard interactivo optimizado para móviles.",
     image: "/work-1.jpeg",
-    stack: ["Agrega", "tu", "stack"],
+    stack: ["Next.js", "TypeScript", "PostgreSQL", "NestJS"],
     status: "placeholder",
     challenges: "Agrega aquí los retos técnicos resueltos.",
     learnings: "Agrega aquí los aprendizajes obtenidos.",
