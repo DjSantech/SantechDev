@@ -5,15 +5,19 @@ import { ChevronDown } from "lucide-react";
 import { motion } from "motion/react";
 
 import { faq } from "@/lib/data/faq";
+import { useLanguage } from "@/lib/i18n/language-context";
+import { uiStrings } from "@/lib/i18n/ui-strings";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { Reveal } from "@/components/ui/reveal";
 
 export function Faq() {
+  const { lang } = useLanguage();
+  const t = uiStrings[lang].faq;
   const [openId, setOpenId] = useState<string | null>(faq[0]?.id ?? null);
 
   return (
     <section id="faq" aria-labelledby="faq-heading" className="mx-auto max-w-4xl px-4 py-24 md:px-6">
-      <SectionHeading kicker="Preguntas frecuentes" title="Lo que un reclutador quiere saber" />
+      <SectionHeading kicker={t.kicker} title={t.title} />
 
       <div className="mt-12 flex flex-col gap-3">
         {faq.map(({ id, question, answer }, index) => {
@@ -29,7 +33,7 @@ export function Faq() {
                   aria-controls={`faq-panel-${id}`}
                   className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left text-sm font-semibold text-white"
                 >
-                  {question}
+                  {question[lang]}
                   <motion.span animate={{ rotate: isOpen ? 180 : 0 }} transition={{ duration: 0.2 }}>
                     <ChevronDown className="h-4 w-4 shrink-0 text-violet-400" />
                   </motion.span>
@@ -43,7 +47,7 @@ export function Faq() {
                 transition={{ duration: 0.25 }}
                 className="overflow-hidden"
               >
-                <p className="px-6 pb-5 text-sm text-zinc-400">{answer}</p>
+                <p className="px-6 pb-5 text-sm text-zinc-400">{answer[lang]}</p>
               </motion.div>
             </Reveal>
           );

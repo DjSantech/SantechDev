@@ -6,12 +6,15 @@ import "./globals.css";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { ScrollProgress } from "@/components/layout/scroll-progress";
+import { LanguageProvider } from "@/lib/i18n/language-context";
+import { LanguageBanner } from "@/components/ui/language-banner";
+import { SkipLink } from "@/components/layout/skip-link";
 import { siteConfig } from "@/lib/site-config";
 
 const urbanist = Urbanist({ subsets: ["latin"], variable: "--font-urbanist" });
 
-const title = `${siteConfig.name} — ${siteConfig.role}`;
-const description = siteConfig.pitch;
+const title = `${siteConfig.name} — ${siteConfig.role.es}`;
+const description = siteConfig.pitch.es;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.siteUrl),
@@ -51,16 +54,14 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body className={`${urbanist.className} bg-zinc-950 text-white antialiased`}>
-        <a
-          href="#inicio"
-          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-full focus:bg-violet-500 focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-white"
-        >
-          Saltar al contenido principal
-        </a>
-        <ScrollProgress />
-        <Navbar />
-        <main id="main-content">{children}</main>
-        <Footer />
+        <LanguageProvider>
+          <SkipLink />
+          <LanguageBanner />
+          <ScrollProgress />
+          <Navbar />
+          <main id="main-content">{children}</main>
+          <Footer />
+        </LanguageProvider>
       </body>
     </html>
   );

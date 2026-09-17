@@ -5,11 +5,15 @@ import Link from "next/link";
 import { Download, Send } from "lucide-react";
 
 import { siteConfig, socialLinks } from "@/lib/site-config";
+import { useLanguage } from "@/lib/i18n/language-context";
+import { uiStrings } from "@/lib/i18n/ui-strings";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { Reveal } from "@/components/ui/reveal";
 import { Button } from "@/components/ui/button";
 
 export function Contact() {
+  const { lang } = useLanguage();
+  const t = uiStrings[lang].contact;
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
@@ -23,18 +27,14 @@ export function Contact() {
 
   return (
     <section id="contacto" aria-labelledby="contacto-heading" className="mx-auto max-w-6xl px-4 py-24 md:px-6">
-      <SectionHeading
-        kicker="Contacto"
-        title="Hablemos"
-        description="¿Tienes una oportunidad, una práctica o un proyecto en mente? Escríbeme."
-      />
+      <SectionHeading kicker={t.kicker} title={t.title} description={t.description} />
 
       <div className="mt-12 grid grid-cols-1 gap-10 md:grid-cols-2">
         <Reveal className="flex flex-col gap-6">
           <div className="flex flex-wrap gap-3">
             <Button href={`mailto:${siteConfig.email}`}>{siteConfig.email}</Button>
             <Button href={siteConfig.resumeUrl} variant="secondary" icon={<Download className="h-4 w-4" />}>
-              Descargar CV
+              {t.downloadCv}
             </Button>
           </div>
 
@@ -58,7 +58,7 @@ export function Contact() {
           <form onSubmit={handleSubmit} className="flex flex-col gap-4 rounded-2xl border border-white/10 bg-white/[0.03] p-6">
             <div className="flex flex-col gap-1.5">
               <label htmlFor="contact-name" className="text-xs font-medium text-zinc-400">
-                Nombre
+                {t.nameLabel}
               </label>
               <input
                 id="contact-name"
@@ -72,7 +72,7 @@ export function Contact() {
 
             <div className="flex flex-col gap-1.5">
               <label htmlFor="contact-email" className="text-xs font-medium text-zinc-400">
-                Tu correo
+                {t.emailLabel}
               </label>
               <input
                 id="contact-email"
@@ -86,7 +86,7 @@ export function Contact() {
 
             <div className="flex flex-col gap-1.5">
               <label htmlFor="contact-message" className="text-xs font-medium text-zinc-400">
-                Mensaje
+                {t.messageLabel}
               </label>
               <textarea
                 id="contact-message"
@@ -102,7 +102,7 @@ export function Contact() {
               type="submit"
               className="inline-flex items-center justify-center gap-2 self-start rounded-full bg-violet-500 px-6 py-3 text-sm font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-violet-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-400 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-950"
             >
-              Enviar mensaje
+              {t.sendButton}
               <Send className="h-4 w-4" />
             </button>
           </form>

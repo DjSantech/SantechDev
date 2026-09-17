@@ -7,6 +7,8 @@ import { motion } from "motion/react";
 
 import { siteConfig, socialLinks } from "@/lib/site-config";
 import { staggerContainer, fadeInUp } from "@/lib/motion";
+import { useLanguage } from "@/lib/i18n/language-context";
+import { uiStrings } from "@/lib/i18n/ui-strings";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { RotatingWord } from "@/components/ui/rotating-word";
@@ -15,11 +17,16 @@ import { CursorGlow } from "@/components/layout/cursor-glow";
 const mainStack = ["React", "Next.js", "TypeScript", "Tailwind CSS"];
 
 export function Hero() {
+  const { lang, showBanner } = useLanguage();
+  const t = uiStrings[lang].hero;
+
   return (
     <section
       id="inicio"
       aria-label="Presentación"
-      className="relative flex min-h-[100dvh] items-center overflow-hidden pt-28 pb-16"
+      className={`relative flex min-h-[100dvh] items-center overflow-hidden pb-16 transition-[padding-top] duration-300 ${
+        showBanner ? "pt-40" : "pt-28"
+      }`}
     >
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_80%_50%_at_50%_-10%,rgba(139,92,246,0.25),transparent)]" />
       <CursorGlow />
@@ -34,18 +41,18 @@ export function Hero() {
           <motion.div variants={fadeInUp()}>
             <Badge variant={siteConfig.isAvailable ? "success" : "default"}>
               <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-              {siteConfig.availability}
+              {siteConfig.availability[lang]}
             </Badge>
           </motion.div>
 
           <motion.h1 variants={fadeInUp()} className="text-4xl font-extrabold leading-[1.1] text-white md:text-6xl">
-            Hola, soy {siteConfig.name.split(" ")[0]}.
+            {t.greetingPrefix} {siteConfig.name.split(" ")[0]}.
             <br />
-            Construyo <RotatingWord words={siteConfig.roleKeywords} className="text-violet-400" />
+            {t.buildPrefix} <RotatingWord words={siteConfig.roleKeywords[lang]} className="text-violet-400" />
           </motion.h1>
 
           <motion.p variants={fadeInUp()} className="max-w-xl text-lg text-zinc-400">
-            {siteConfig.pitch}
+            {siteConfig.pitch[lang]}
           </motion.p>
 
           <motion.div variants={fadeInUp()} className="flex flex-wrap gap-2">
@@ -56,10 +63,10 @@ export function Hero() {
 
           <motion.div variants={fadeInUp()} className="flex flex-wrap items-center gap-4 pt-2">
             <Button href="#proyectos" icon={<ArrowRight className="h-4 w-4" />}>
-              Ver proyectos
+              {t.ctaProjects}
             </Button>
             <Button href="#contacto" variant="secondary" icon={<Mail className="h-4 w-4" />}>
-              Contactar
+              {t.ctaContact}
             </Button>
           </motion.div>
 
@@ -95,7 +102,7 @@ export function Hero() {
 
       <Link
         href="#sobre-mi"
-        aria-label="Ir a la siguiente sección"
+        aria-label={t.scrollNext}
         className="absolute bottom-8 left-1/2 hidden -translate-x-1/2 text-zinc-500 transition-colors hover:text-white md:block"
       >
         <motion.span animate={{ y: [0, 8, 0] }} transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }} className="block">

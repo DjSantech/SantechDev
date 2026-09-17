@@ -3,6 +3,13 @@ import type { LucideIcon } from "lucide-react";
 
 export type IconComponent = LucideIcon | IconType;
 
+export type Locale = "es" | "en";
+
+export interface LocalizedText {
+  es: string;
+  en: string;
+}
+
 export interface SocialLink {
   id: string;
   label: string;
@@ -12,7 +19,7 @@ export interface SocialLink {
 
 export interface NavLink {
   id: string;
-  label: string;
+  label: LocalizedText;
   href: string;
 }
 
@@ -20,33 +27,33 @@ export type ProjectStatus = "finalizado" | "en-progreso" | "placeholder";
 
 export interface Project {
   id: string;
-  title: string;
-  description: string;
+  title: LocalizedText;
+  description: LocalizedText;
   image: string;
   stack: string[];
   status: ProjectStatus;
   urlGithub?: string;
   urlDemo?: string;
-  challenges: string;
-  learnings: string;
+  challenges: LocalizedText;
+  learnings: LocalizedText;
   isPlaceholder?: boolean;
 }
 
 export interface ExperienceItem {
   id: string;
-  role: string;
-  place: string;
-  period: string;
-  description: string;
+  role: LocalizedText;
+  place: LocalizedText;
+  period: LocalizedText;
+  description: LocalizedText;
   isPlaceholder?: boolean;
 }
 
 export interface EducationItem {
   id: string;
-  title: string;
-  institution: string;
-  period: string;
-  description: string;
+  title: LocalizedText;
+  institution: LocalizedText;
+  period: LocalizedText;
+  description: LocalizedText;
   isPlaceholder?: boolean;
 }
 
@@ -61,20 +68,20 @@ export interface TechItem {
 
 export interface TechCategory {
   id: string;
-  title: string;
+  title: LocalizedText;
   items: TechItem[];
 }
 
 export interface FaqItem {
   id: string;
-  question: string;
-  answer: string;
+  question: LocalizedText;
+  answer: LocalizedText;
 }
 
 export interface TestimonialItem {
   id: string;
-  name: string;
-  role: string;
-  quote: string;
+  name: LocalizedText;
+  role: LocalizedText;
+  quote: LocalizedText;
   isPlaceholder?: boolean;
 }

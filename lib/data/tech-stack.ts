@@ -16,12 +16,12 @@ import {
   SiVercel,
 } from "react-icons/si";
 
-import type { TechCategory } from "../types";
+import type { LocalizedText, TechCategory } from "../types";
 
 export const techStack: TechCategory[] = [
   {
     id: "frontend",
-    title: "Frontend",
+    title: { es: "Frontend", en: "Frontend" },
     items: [
       { id: "react", name: "React", icon: SiReact, level: 4 },
       { id: "nextjs", name: "Next.js", icon: SiNextdotjs, level: 4 },
@@ -34,7 +34,7 @@ export const techStack: TechCategory[] = [
   },
   {
     id: "backend",
-    title: "Backend y bases de datos",
+    title: { es: "Backend y bases de datos", en: "Backend and databases" },
     items: [
       { id: "nodejs", name: "Node.js", icon: SiNodedotjs, level: 3 },
       { id: "mysql", name: "MySQL", icon: SiMysql, level: 3 },
@@ -44,7 +44,7 @@ export const techStack: TechCategory[] = [
   },
   {
     id: "herramientas",
-    title: "Herramientas",
+    title: { es: "Herramientas", en: "Tools" },
     items: [
       { id: "git", name: "Git", icon: SiGit, level: 4 },
       { id: "figma", name: "Figma", icon: SiFigma, level: 3 },
@@ -55,4 +55,8 @@ export const techStack: TechCategory[] = [
   },
 ];
 
-export const learningNow: string[] = ["Agentes de IA", "N8N", "Ciberseguridad"];
+export const learningNow: LocalizedText[] = [
+  { es: "Agentes de IA", en: "AI Agents" },
+  { es: "N8N", en: "N8N" },
+  { es: "Ciberseguridad", en: "Cybersecurity" },
+];
