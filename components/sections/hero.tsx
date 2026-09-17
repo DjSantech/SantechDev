@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowDown, ArrowRight, Mail } from "lucide-react";
 import { motion } from "motion/react";
@@ -8,7 +9,6 @@ import { siteConfig, socialLinks } from "@/lib/site-config";
 import { staggerContainer, fadeInUp } from "@/lib/motion";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { PlaceholderFrame } from "@/components/ui/placeholder-frame";
 import { RotatingWord } from "@/components/ui/rotating-word";
 import { CursorGlow } from "@/components/layout/cursor-glow";
 
@@ -80,7 +80,16 @@ export function Hero() {
         </div>
 
         <motion.div variants={fadeInUp()} className="mx-auto w-full max-w-sm">
-          <PlaceholderFrame label="Agrega aquí tu fotografía" className="aspect-square w-full" />
+          <div className="relative aspect-square w-full overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-violet-500/10 to-transparent">
+            <Image
+              src="/Foto_Perfil_Polo_Negra.png"
+              alt={siteConfig.name}
+              fill
+              priority
+              sizes="(min-width: 768px) 384px, 100vw"
+              className="object-cover"
+            />
+          </div>
         </motion.div>
       </motion.div>
 

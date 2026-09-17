@@ -2,6 +2,48 @@ import type { Project } from "../types";
 
 export const projects: Project[] = [
   {
+    id: "ceoenfragancias",
+    title: "CEOENFRAGANCIAS — Perfumería E-commerce",
+    description:
+      "Tienda en línea de perfumería construida para vender en Pereira y en toda Colombia. Además del catálogo público, incluye un panel de administración, precios diferenciados para mayoristas y un programa de dropshipping donde cada vendedor tiene su propio link y gana una comisión por venta.",
+    image: "/ceoenfragancia_captura.png",
+    stack: ["Next.js", "TypeScript", "MongoDB Atlas", "Mercado Pago"],
+    status: "en-progreso",
+    urlDemo: "https://ceoenfragancia.com",
+    challenges:
+      "Integrar la API de Mercado Pago para el procesamiento seguro de pagos, resolver flujos de Git y fallos de build en Vercel, y configurar el dominio personalizado y el DNS de producción (ceofragancias.com).",
+    learnings:
+      "Cómo estructurar un sistema de precios diferenciados por rol (público / mayorista) y un programa de dropshipping con enlaces y comisiones por vendedor sobre una base de datos no relacional.",
+  },
+  {
+    id: "vapes-princys",
+    title: "Vapes Princys E-commerce",
+    description:
+      "Aplicación web Full-stack construida con React, TypeScript y MongoDB para la gestión dinámica de productos e inventario. Cuenta con una API REST segura y diseño 100% responsivo.",
+    image: "/vapitos_princys_captura.png",
+    stack: ["React", "TypeScript", "Node.js", "MongoDB"],
+    status: "finalizado",
+    urlDemo: "https://vapitosprincys.com",
+    challenges:
+      "Diseñar y consumir una API RESTful propia con operaciones CRUD completas para productos e inventario, e implementar autenticación JWT junto con control de acceso basado en roles (RBAC).",
+    learnings:
+      "Desplegar una infraestructura full-stack separando frontend (Vercel) y backend (Render), y asegurar los flujos de autenticación y autorización de un e-commerce real.",
+  },
+  {
+    id: "power-mix",
+    title: "POWER-MIX — Plataforma Corporativa",
+    description:
+      "Sitio web empresarial e institucional para una empresa de alquiler de luces y sonido. Desarrollado con Next.js, TypeScript y Tailwind CSS, optimizado rigurosamente para rendimiento y SEO.",
+    image: "/powermixlucesysonido_captura.png",
+    stack: ["Next.js", "TypeScript", "Tailwind CSS"],
+    status: "finalizado",
+    urlDemo: "https://powermixlucesysonido.com",
+    challenges:
+      "Optimizar la aplicación para motores de búsqueda (SEO) y velocidad de carga, mejorando la indexación en buscadores y la retención general de usuarios.",
+    learnings:
+      "Técnicas de SEO técnico y optimización de rendimiento aplicadas a un sitio institucional real, en producción para un cliente.",
+  },
+  {
     id: "cercafe-memorama",
     title: "Cercafe Memorama",
     description:

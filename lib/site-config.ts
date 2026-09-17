@@ -6,12 +6,12 @@ import type { NavLink, SocialLink } from "./types";
 export const siteConfig = {
   name: "Santiago Guevara",
   brand: "SantechDev",
-  role: "Frontend Developer",
-  roleKeywords: ["interfaces accesibles", "flujo de trabajo", "rendimiento", "experiencias premium"],
+  role: "Full-Stack Developer",
+  roleKeywords: ["interfaces accesibles", "APIs y bases de datos", "rendimiento", "experiencias premium"],
   location: "Pereira, Colombia",
   email: "santiguevara20161@gmail.com",
   pitch:
-    "Estudiante de Ingeniería de Sistemas y desarrollador frontend enfocado en construir interfaces rápidas, accesibles y cuidadas al detalle con React y Next.js.",
+    "Estudiante de Ingeniería de Sistemas y desarrollador Full-Stack. Construyo interfaces rápidas y cuidadas al detalle con React y Next.js, programo el backend y conecto bases de datos, y aplico seguridad web para proteger cada aplicación que desarrollo.",
   availability: "Disponible para prácticas y primeras oportunidades",
   isAvailable: true,
   resumeUrl: "/cv-santiago-guevara.pdf",

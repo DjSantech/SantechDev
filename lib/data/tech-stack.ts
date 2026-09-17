@@ -4,12 +4,16 @@ import {
   SiGit,
   SiHtml5,
   SiJavascript,
+  SiMongodb,
   SiMysql,
   SiNextdotjs,
   SiNodedotjs,
+  SiPhpmyadmin,
   SiReact,
+  SiRender,
   SiTailwindcss,
   SiTypescript,
+  SiVercel,
 } from "react-icons/si";
 
 import type { TechCategory } from "../types";
@@ -34,6 +38,8 @@ export const techStack: TechCategory[] = [
     items: [
       { id: "nodejs", name: "Node.js", icon: SiNodedotjs, level: 3 },
       { id: "mysql", name: "MySQL", icon: SiMysql, level: 3 },
+      { id: "mongodb", name: "MongoDB Atlas", icon: SiMongodb, level: 3 },
+      { id: "phpmyadmin", name: "phpMyAdmin", icon: SiPhpmyadmin, level: 3 },
     ],
   },
   {
@@ -42,8 +48,11 @@ export const techStack: TechCategory[] = [
     items: [
       { id: "git", name: "Git", icon: SiGit, level: 4 },
       { id: "figma", name: "Figma", icon: SiFigma, level: 3 },
+      { id: "vercel", name: "Vercel", icon: SiVercel, level: 4 },
+      { id: "render", name: "Render", icon: SiRender, level: 3 },
+      { id: "mongodb-compass", name: "MongoDB Compass", icon: SiMongodb, level: 3 },
     ],
   },
 ];
 
-export const learningNow: string[] = ["PostgreSQL", "NestJS"];
+export const learningNow: string[] = ["Agentes de IA", "N8N", "Ciberseguridad"];

@@ -1,7 +1,6 @@
 import { GraduationCap, MapPin, Target } from "lucide-react";
 
 import { siteConfig } from "@/lib/site-config";
-import { projects } from "@/lib/data/projects";
 import { techStack } from "@/lib/data/tech-stack";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { Reveal } from "@/components/ui/reveal";
@@ -15,8 +14,9 @@ const quickFacts = [
   { icon: Target, label: siteConfig.availability },
 ];
 
+const COMPLETED_PROJECTS = 10;
+
 export function About() {
-  const completedProjects = projects.filter((project) => !project.isPlaceholder).length;
   const techCount = techStack.reduce((total, category) => total + category.items.length, 0);
   const yearsLearning = Math.max(1, new Date().getFullYear() - STUDY_START_YEAR);
 
@@ -34,7 +34,9 @@ export function About() {
               no es solo escribir código, sino la capacidad de materializar ideas y solucionar problemas reales
               mediante software bien estructurado. Me apasiona el desarrollo web porque me permite conectar la
               lógica abstracta del backend con experiencias de usuario intuitivas, rápidas y visualmente atractivas
-              en el frontend.
+              en el frontend. Sé programar el backend, conectar y modelar bases de datos, y aplicar seguridad web
+              (autenticación, control de acceso y protección de credenciales) para que cada aplicación que
+              construyo sea robusta de punta a punta.
             </p>
           </Reveal>
 
@@ -72,7 +74,7 @@ export function About() {
           </Reveal>
 
           <Reveal delay={0.1} className="grid grid-cols-3 gap-4 rounded-2xl border border-white/10 bg-white/[0.03] p-6">
-            <StatCounter end={completedProjects} suffix="" label="Proyectos completados" />
+            <StatCounter end={COMPLETED_PROJECTS} suffix="+" label="Proyectos completados" />
             <StatCounter end={techCount} suffix="+" label="Tecnologías" />
             <StatCounter end={yearsLearning} suffix="+" label="Años programando" />
           </Reveal>
