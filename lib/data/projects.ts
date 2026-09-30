@@ -2,6 +2,26 @@ import type { Project } from "../types";
 
 export const projects: Project[] = [
   {
+    id: "panesypan",
+    title: { es: "Panes & Pan — POS y Web para Panadería", en: "Panes & Pan — POS and Website for a Bakery" },
+    description: {
+      es: "Sistema completo para una panadería real en Dosquebradas: punto de venta táctil con mesas y pagos mixtos (efectivo, Nequi, Daviplata, tarjeta), cierre de caja con arqueo, inventario y producción diaria, dashboard en tiempo real para el administrador y una web pública con menú del día y pedidos por WhatsApp.",
+      en: "End-to-end system for a real bakery in Dosquebradas, Colombia: touch-screen point of sale with tables and split payments (cash, Nequi, Daviplata, card), cash register closing with counts, inventory and daily production, a real-time dashboard for the owner, and a public website with the daily menu and WhatsApp ordering.",
+    },
+    image: "/panesypan_captura.png",
+    stack: ["React", "Next.js", "TypeScript", "Node.js", "Express", "MongoDB Atlas", "Socket.IO"],
+    status: "en-progreso",
+    urlDemo: "https://panesypan.com",
+    challenges: {
+      es: "Diseñar un monorepo (POS, API, web pública y un paquete compartido de validaciones) con permisos por rol validados en el backend, ventas y cierres de caja atómicos con transacciones de MongoDB, pedidos web que llegan en tiempo real a la caja, y el despliegue en Vercel, Render y Cloudflare con dominio propio.",
+      en: "Designing a monorepo (POS, API, public website, and a shared validation package) with role-based permissions enforced on the backend, atomic sales and register closings using MongoDB transactions, web orders that reach the register in real time, and deployment on Vercel, Render, and Cloudflare with a custom domain.",
+    },
+    learnings: {
+      es: "Llevar a producción un sistema que un negocio usa a diario: manejo de dinero en pesos enteros y zona horaria de Colombia, pruebas E2E con Playwright, CI con GitHub Actions, respaldos de la base de datos y facturación electrónica DIAN preparada para activarse.",
+      en: "Shipping a system a business relies on every day: handling money as integer pesos and Colombia's time zone, E2E testing with Playwright, CI with GitHub Actions, database backups, and DIAN electronic invoicing ready to be switched on.",
+    },
+  },
+  {
     id: "ceoenfragancias",
     title: { es: "CEOENFRAGANCIAS — Perfumería E-commerce", en: "CEOENFRAGANCIAS — Perfume E-commerce" },
     description: {
