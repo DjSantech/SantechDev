@@ -40,8 +40,8 @@ export function TechStack() {
               {category.items.map(({ id, name, icon: Icon, level }) => (
                 <li key={id} className="flex items-center justify-between gap-3">
                   <span className="flex items-center gap-3 text-sm text-zinc-200">
-                    <Icon className="h-4 w-4 text-violet-400" aria-hidden="true" />
-                    {name}
+                    <Icon className="h-4 w-4 shrink-0 text-violet-400" aria-hidden="true" />
+                    {typeof name === "string" ? name : name[lang]}
                   </span>
                   <LevelDots level={level} ariaLabel={t.levelAriaLabel(level)} />
                 </li>

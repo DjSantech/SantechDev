@@ -25,11 +25,19 @@ export interface NavLink {
 
 export type ProjectStatus = "finalizado" | "en-progreso" | "placeholder";
 
+export interface ProjectCover {
+  icon: IconComponent;
+  label: LocalizedText;
+}
+
 export interface Project {
   id: string;
   title: LocalizedText;
   description: LocalizedText;
-  image: string;
+  /** Captura del proyecto. Si no hay, se muestra `cover`. */
+  image?: string;
+  /** Portada con ícono para proyectos sin captura (privados, librerías, etc.). */
+  cover?: ProjectCover;
   stack: string[];
   status: ProjectStatus;
   urlGithub?: string;
@@ -37,6 +45,8 @@ export interface Project {
   challenges: LocalizedText;
   learnings: LocalizedText;
   isPlaceholder?: boolean;
+  /** Proyecto privado para cliente: sin repo ni demo públicos. */
+  isPrivate?: boolean;
 }
 
 export interface ExperienceItem {
@@ -61,7 +71,7 @@ export type SkillLevel = 1 | 2 | 3 | 4 | 5;
 
 export interface TechItem {
   id: string;
-  name: string;
+  name: string | LocalizedText;
   icon: IconComponent;
   level: SkillLevel;
 }

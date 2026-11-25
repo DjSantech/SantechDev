@@ -14,7 +14,7 @@ import { Button } from "@/components/ui/button";
 import { RotatingWord } from "@/components/ui/rotating-word";
 import { CursorGlow } from "@/components/layout/cursor-glow";
 
-const mainStack = ["React", "Next.js", "TypeScript", "Tailwind CSS"];
+const mainStack = ["React", "Next.js", "TypeScript", "Node.js", "MongoDB Atlas", "Cloudflare", "Claude Code"];
 
 export function Hero() {
   const { lang, showBanner } = useLanguage();

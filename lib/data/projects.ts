@@ -1,84 +1,154 @@
+import { Lock, Plug } from "lucide-react";
+
 import type { Project } from "../types";
 
 export const projects: Project[] = [
   {
-    id: "panesypan",
-    title: { es: "Panes & Pan — POS y Web para Panadería", en: "Panes & Pan — POS and Website for a Bakery" },
-    description: {
-      es: "Sistema completo para una panadería real en Dosquebradas: punto de venta táctil con mesas y pagos mixtos (efectivo, Nequi, Daviplata, tarjeta), cierre de caja con arqueo, inventario y producción diaria, dashboard en tiempo real para el administrador y una web pública con menú del día y pedidos por WhatsApp.",
-      en: "End-to-end system for a real bakery in Dosquebradas, Colombia: touch-screen point of sale with tables and split payments (cash, Nequi, Daviplata, card), cash register closing with counts, inventory and daily production, a real-time dashboard for the owner, and a public website with the daily menu and WhatsApp ordering.",
+    id: "pasarela-internacional",
+    title: {
+      es: "Pasarela Internacional — Sistema de gestión para discoteca",
+      en: "Pasarela Internacional — Nightclub Management System",
     },
-    image: "/panesypan_captura.png",
-    stack: ["React", "Next.js", "TypeScript", "Node.js", "Express", "MongoDB Atlas", "Socket.IO"],
+    description: {
+      es: "Sistema privado (PWA) solo para el personal de una discoteca, con roles de administrador, barra, meseros (cada uno con su código) y modelos. Maneja cuentas abiertas por mesa, base de caja y cuadre por mesero, comisiones por escalas y pagos al personal con recibo impreso.",
+      en: "Private, staff-only system (PWA) for a nightclub, with roles for admin, bar, waiters (each with their own code), and models. It handles open tabs per table, cash float and per-waiter reconciliation, tiered commissions, and staff payouts with printed receipts.",
+    },
+    cover: {
+      icon: Lock,
+      label: { es: "Proyecto privado para cliente", en: "Private client project" },
+    },
+    stack: ["TypeScript", "React", "Vite", "Tailwind CSS", "Node.js", "Express", "Mongoose", "Zod", "MongoDB Atlas"],
     status: "en-progreso",
-    urlDemo: "https://panesypan.com",
+    isPrivate: true,
     challenges: {
-      es: "Diseñar un monorepo (POS, API, web pública y un paquete compartido de validaciones) con permisos por rol validados en el backend, ventas y cierres de caja atómicos con transacciones de MongoDB, pedidos web que llegan en tiempo real a la caja, y el despliegue en Vercel, Render y Cloudflare con dominio propio.",
-      en: "Designing a monorepo (POS, API, public website, and a shared validation package) with role-based permissions enforced on the backend, atomic sales and register closings using MongoDB transactions, web orders that reach the register in real time, and deployment on Vercel, Render, and Cloudflare with a custom domain.",
+      es: "Cubrir toda la operación del negocio en un solo sistema: inventario con kardex, control de habitaciones por tiempo, ingresos y egresos, reportes e impresión de tiquetes térmicos de 58 y 80 mm, con permisos distintos para cada rol.",
+      en: "Covering the entire business operation in a single system: inventory with a kardex, time-based room control, income and expenses, reports, and 58/80 mm thermal ticket printing, with different permissions for each role.",
     },
     learnings: {
-      es: "Llevar a producción un sistema que un negocio usa a diario: manejo de dinero en pesos enteros y zona horaria de Colombia, pruebas E2E con Playwright, CI con GitHub Actions, respaldos de la base de datos y facturación electrónica DIAN preparada para activarse.",
-      en: "Shipping a system a business relies on every day: handling money as integer pesos and Colombia's time zone, E2E testing with Playwright, CI with GitHub Actions, database backups, and DIAN electronic invoicing ready to be switched on.",
+      es: "Estructurar un monorepo TypeScript con esquemas Zod compartidos entre frontend y backend, y desplegarlo por partes: frontend en Cloudflare Pages, API en Render con MongoDB Atlas, imágenes en Cloudinary y tareas programadas con cron-job.org.",
+      en: "Structuring a TypeScript monorepo with Zod schemas shared between frontend and backend, and deploying it in parts: frontend on Cloudflare Pages, API on Render with MongoDB Atlas, images on Cloudinary, and scheduled jobs with cron-job.org.",
     },
   },
   {
-    id: "ceoenfragancias",
-    title: { es: "CEOENFRAGANCIAS — Perfumería E-commerce", en: "CEOENFRAGANCIAS — Perfume E-commerce" },
+    id: "panesypan",
+    title: {
+      es: "Panes & Pan — Sistema POS, administrativo y sitio web",
+      en: "Panes & Pan — POS, Back Office, and Website",
+    },
     description: {
-      es: "Tienda en línea de perfumería construida para vender en Pereira y en toda Colombia. Además del catálogo público, incluye un panel de administración, precios diferenciados para mayoristas y un programa de dropshipping donde cada vendedor tiene su propio link y gana una comisión por venta.",
-      en: "Online perfume store built to sell in Pereira and across Colombia. On top of the public catalog, it includes an admin panel, tiered pricing for wholesalers, and a dropshipping program where each seller gets their own link and earns a commission per sale.",
+      es: "Sistema completo para una panadería en Dosquebradas que reemplazó la plataforma comercial que pagaba (TryTiendas), con migración de productos, costos y proveedores. Venta en pantalla táctil con cuentas por mesa y pagos combinados (efectivo, Nequi, Daviplata, tarjeta), cierre de caja con arqueo, inventario con producción y mermas, y dashboard en tiempo real con Socket.IO.",
+      en: "Complete system for a bakery in Dosquebradas, Colombia, that replaced the commercial platform it was paying for (TryTiendas), including the migration of products, costs, and suppliers. Touch-screen sales with per-table tabs and split payments (cash, Nequi, Daviplata, card), register closing with cash count, inventory with production and waste tracking, and a real-time dashboard with Socket.IO.",
+    },
+    image: "/panesypan_captura.png",
+    stack: [
+      "React 19",
+      "TypeScript",
+      "Vite",
+      "Tailwind CSS",
+      "TanStack Query",
+      "Zustand",
+      "Node.js",
+      "Express 5",
+      "Zod",
+      "MongoDB Atlas",
+      "Socket.IO",
+    ],
+    status: "en-progreso",
+    urlGithub: "https://github.com/DjSantech/PanesyPan",
+    urlDemo: "https://panesypan.com",
+    challenges: {
+      es: "Separar el sitio público, el sistema interno (sistema.panesypan.com) en Cloudflare y la API REST (api.panesypan.com) en Render, y blindarlos: RBAC en el backend, argon2id, cookies httpOnly con refresh rotativo, CSRF, auditoría, rate limiting y WAF de Cloudflare con header secreto de origen. Además: PWA instalable, tiquetes térmicos, exportes CSV y facturación electrónica DIAN (Factus) lista para activar.",
+      en: "Splitting the public site, the internal system (sistema.panesypan.com) on Cloudflare, and the REST API (api.panesypan.com) on Render, and locking them down: backend RBAC, argon2id, httpOnly cookies with rotating refresh tokens, CSRF protection, audit logging, rate limiting, and a Cloudflare WAF with a secret origin header. Plus an installable PWA, thermal tickets, CSV exports, and DIAN electronic invoicing (Factus) ready to switch on.",
+    },
+    learnings: {
+      es: "Sostener la calidad de un sistema que el negocio usa a diario: pruebas con Vitest, Supertest y Playwright (E2E), accesibilidad WCAG 2.2 AA verificada con axe y CI en GitHub Actions. Lo desarrollé por fases en paralelo con git worktrees y Claude Code, en un monorepo pnpm con TypeScript estricto.",
+      en: "Keeping quality high on a system the business relies on every day: tests with Vitest, Supertest, and Playwright (E2E), WCAG 2.2 AA accessibility checked with axe, and CI on GitHub Actions. I built it in parallel phases using git worktrees and Claude Code, in a strict-TypeScript pnpm monorepo.",
+    },
+  },
+  {
+    id: "ceoenfragancia",
+    title: { es: "CEOENFRAGANCIA — E-commerce de fragancias", en: "CEOENFRAGANCIA — Fragrance E-commerce" },
+    description: {
+      es: "Tienda en línea para una perfumería con 2 locales: catálogo filtrable, precios al detal y mayoristas, esencias por gramos y un programa de dropshipping por link. Recibe pagos con la API de Mercado Pago y pedidos por WhatsApp, e incluye un sistema administrativo interno para las ventas del local, los insumos y la caja.",
+      en: "Online store for a perfume shop with 2 physical locations: filterable catalog, retail and wholesale pricing, essences sold by the gram, and a link-based dropshipping program. It takes payments through the Mercado Pago API and orders via WhatsApp, and includes an internal admin system for in-store sales, supplies, and the cash register.",
     },
     image: "/ceoenfragancia_captura.png",
-    stack: ["Next.js", "TypeScript", "MongoDB Atlas", "Mercado Pago"],
+    stack: ["Next.js 15", "TypeScript", "Express", "MongoDB", "Mercado Pago", "Cloudinary", "Render", "Cloudflare"],
     status: "en-progreso",
     urlDemo: "https://ceoenfragancia.com",
     challenges: {
-      es: "Integrar la API de Mercado Pago para el procesamiento seguro de pagos, resolver flujos de Git y fallos de build en Vercel, y configurar el dominio personalizado y el DNS de producción (ceofragancias.com).",
-      en: "Integrating the Mercado Pago API for secure payment processing, resolving Git workflow and Vercel build issues, and configuring the custom domain and production DNS (ceofragancias.com).",
+      es: "Migrar la tienda de Vercel a Cloudflare Workers con despliegue automático desde GitHub Actions, transferir el dominio de Wix a Porkbun con el DNS en Cloudflare (ceoenfragancia.com), y mitigar el tráfico de bots con reglas por región.",
+      en: "Migrating the store from Vercel to Cloudflare Workers with automatic deployments from GitHub Actions, transferring the domain from Wix to Porkbun with DNS on Cloudflare (ceoenfragancia.com), and mitigating bot traffic with region-based rules.",
     },
     learnings: {
-      es: "Cómo estructurar un sistema de precios diferenciados por rol (público / mayorista) y un programa de dropshipping con enlaces y comisiones por vendedor sobre una base de datos no relacional.",
-      en: "How to structure a role-based tiered pricing system (public / wholesale) and a dropshipping program with per-seller links and commissions on top of a non-relational database.",
-    },
-  },
-  {
-    id: "vapes-princys",
-    title: { es: "Vapes Princys E-commerce", en: "Vapes Princys E-commerce" },
-    description: {
-      es: "Aplicación web Full-stack construida con React, TypeScript y MongoDB para la gestión dinámica de productos e inventario. Cuenta con una API REST segura y diseño 100% responsivo.",
-      en: "Full-stack web application built with React, TypeScript, and MongoDB for dynamic product and inventory management. Features a secure REST API and a fully responsive design.",
-    },
-    image: "/vapitos_princys_captura.png",
-    stack: ["React", "TypeScript", "Node.js", "MongoDB"],
-    status: "finalizado",
-    urlDemo: "https://vapitosprincys.com",
-    challenges: {
-      es: "Diseñar y consumir una API RESTful propia con operaciones CRUD completas para productos e inventario, e implementar autenticación JWT junto con control de acceso basado en roles (RBAC).",
-      en: "Designing and consuming a custom RESTful API with full CRUD operations for products and inventory, and implementing JWT authentication together with role-based access control (RBAC).",
-    },
-    learnings: {
-      es: "Desplegar una infraestructura full-stack separando frontend (Vercel) y backend (Render), y asegurar los flujos de autenticación y autorización de un e-commerce real.",
-      en: "Deploying a full-stack infrastructure with a split frontend (Vercel) and backend (Render), and securing the authentication and authorization flows of a real e-commerce store.",
+      es: "Estructurar precios diferenciados (detal / mayorista) y un programa de dropshipping con enlaces por vendedor sobre MongoDB, y conectar la tienda con el Píxel de Meta para las campañas de Meta Ads.",
+      en: "Structuring tiered pricing (retail / wholesale) and a dropshipping program with per-seller links on MongoDB, and connecting the store to the Meta Pixel for Meta Ads campaigns.",
     },
   },
   {
     id: "power-mix",
-    title: { es: "POWER-MIX — Plataforma Corporativa", en: "POWER-MIX — Corporate Platform" },
+    title: {
+      es: "Power Mix Luces y Sonido — Sitio corporativo",
+      en: "Power Mix Luces y Sonido — Corporate Website",
+    },
     description: {
-      es: "Sitio web empresarial e institucional para una empresa de alquiler de luces y sonido. Desarrollado con Next.js, TypeScript y Tailwind CSS, optimizado rigurosamente para rendimiento y SEO.",
-      en: "Business and institutional website for a lighting and sound rental company. Built with Next.js, TypeScript, and Tailwind CSS, rigorously optimized for performance and SEO.",
+      es: "Sitio corporativo para una empresa de alquiler de luces y sonido, construido con Next.js 16, TypeScript y Tailwind CSS, desplegado en Cloudflare Workers (OpenNext) con despliegue automático desde GitHub y optimizado para SEO.",
+      en: "Corporate website for a lighting and sound rental company, built with Next.js 16, TypeScript, and Tailwind CSS, running on Cloudflare Workers (OpenNext) with automatic deployments from GitHub and optimized for SEO.",
     },
     image: "/powermixlucesysonido_captura.png",
-    stack: ["Next.js", "TypeScript", "Tailwind CSS"],
+    stack: ["Next.js 16", "TypeScript", "Tailwind CSS", "Cloudflare Workers", "OpenNext"],
     status: "finalizado",
     urlDemo: "https://powermixlucesysonido.com",
     challenges: {
-      es: "Optimizar la aplicación para motores de búsqueda (SEO) y velocidad de carga, mejorando la indexación en buscadores y la retención general de usuarios.",
-      en: "Optimizing the application for search engines (SEO) and load speed, improving search indexing and overall user retention.",
+      es: "Llevar un sitio Next.js 16 a Cloudflare Workers con OpenNext y optimizarlo para motores de búsqueda (SEO) y velocidad de carga, mejorando la indexación en buscadores.",
+      en: "Running a Next.js 16 site on Cloudflare Workers with OpenNext and optimizing it for search engines (SEO) and load speed, improving search indexing.",
     },
     learnings: {
-      es: "Técnicas de SEO técnico y optimización de rendimiento aplicadas a un sitio institucional real, en producción para un cliente.",
-      en: "Technical SEO and performance optimization techniques applied to a real institutional site, in production for a client.",
+      es: "Combinar desarrollo y marketing para el mismo cliente: imágenes publicitarias creadas con IA (Gemini, Higgsfield) y planeación de campañas en Meta Ads.",
+      en: "Combining development and marketing for the same client: ad images created with AI (Gemini, Higgsfield) and Meta Ads campaign planning.",
+    },
+  },
+  {
+    id: "vapitos-princys",
+    title: { es: "Vapitos Princys — E-commerce", en: "Vapitos Princys — E-commerce" },
+    description: {
+      es: "Tienda full-stack con gestión de productos e inventario, API REST segura y diseño responsive, construida con React, Vite, TypeScript, Node.js/Express y MongoDB.",
+      en: "Full-stack store with product and inventory management, a secure REST API, and a responsive design, built with React, Vite, TypeScript, Node.js/Express, and MongoDB.",
+    },
+    image: "/vapitos_princys_captura.png",
+    stack: ["React", "Vite", "TypeScript", "Node.js", "Express", "MongoDB"],
+    status: "finalizado",
+    urlDemo: "https://www.vapitosprincys.com",
+    challenges: {
+      es: "Diseñar y consumir una API REST propia con CRUD completo para productos e inventario, y asegurarla con autenticación JWT, control de acceso basado en roles (RBAC) y CORS limitado a los dominios de la tienda.",
+      en: "Designing and consuming a custom REST API with full CRUD for products and inventory, and securing it with JWT authentication, role-based access control (RBAC), and CORS restricted to the store's domains.",
+    },
+    learnings: {
+      es: "Separar la infraestructura en dos: migré el frontend de Vercel a Cloudflare Workers con despliegue desde GitHub Actions y mantuve el backend en Render.",
+      en: "Splitting the infrastructure in two: I migrated the frontend from Vercel to Cloudflare Workers with deployments from GitHub Actions and kept the backend on Render.",
+    },
+  },
+  {
+    id: "resolume-mcp",
+    title: { es: "Resolume MCP — Servidor MCP open source", en: "Resolume MCP — Open-Source MCP Server" },
+    description: {
+      es: "Servidor Model Context Protocol que conecta a Claude con Resolume Arena para controlar visuales en vivo con lenguaje natural, con un modo autopiloto para shows.",
+      en: "Model Context Protocol server that connects Claude to Resolume Arena to control live visuals with natural language, including an autopilot mode for shows.",
+    },
+    cover: {
+      icon: Plug,
+      label: { es: "Código abierto en GitHub", en: "Open source on GitHub" },
+    },
+    stack: ["TypeScript", "Node.js", "MCP", "Zod", "WebSockets", "Render"],
+    status: "finalizado",
+    urlGithub: "https://github.com/DjSantech/resolume-mcp",
+    challenges: {
+      es: "Construir un panel web con acceso de administrador y de espectador comunicado por WebSockets seguros (wss://) y desplegarlo en Render.",
+      en: "Building a web panel with admin and viewer access over secure WebSockets (wss://) and deploying it on Render.",
+    },
+    learnings: {
+      es: "Diseñar herramientas MCP para que un modelo de IA controle software de escritorio en tiempo real, uniendo mi trabajo como VJ con el desarrollo de software.",
+      en: "Designing MCP tools so an AI model can control desktop software in real time, bringing together my VJ work and software development.",
     },
   },
   {

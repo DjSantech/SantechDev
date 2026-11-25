@@ -7,8 +7,8 @@ export const education: EducationItem[] = [
     institution: { es: "Universidad Tecnológica de Pereira", en: "Universidad Tecnológica de Pereira" },
     period: { es: "Desde febrero 2023", en: "Since February 2023" },
     description: {
-      es: "Formación en fundamentos de programación, estructuras de datos, bases de datos y desarrollo de software, actualmente en curso.",
-      en: "Training in programming fundamentals, data structures, databases, and software development, currently in progress.",
+      es: "Formación en fundamentos de programación, estructuras de datos, bases de datos y desarrollo de software; actualmente en 8.º semestre.",
+      en: "Training in programming fundamentals, data structures, databases, and software development; currently in the 8th semester.",
     },
   },
   {
@@ -40,11 +40,11 @@ export const education: EducationItem[] = [
   {
     id: "idioma-ingles",
     title: { es: "Inglés", en: "English" },
-    institution: { es: "Nivel Intermedio (B1 - B2)", en: "Intermediate Level (B1 - B2)" },
+    institution: { es: "Nivel B2 (intermedio alto)", en: "B2 Level (upper intermediate)" },
     period: { es: "Lectura y documentación técnica", en: "Reading and technical documentation" },
     description: {
-      es: "Capacidad para comprender documentación oficial de software, consumir recursos técnicos globales en inglés y escribir código auto-documentado con buenas prácticas internacionales.",
-      en: "Able to understand official software documentation, consume global technical resources in English, and write self-documenting code following international best practices.",
+      es: "Capacidad para comprender documentación oficial de software, consumir recursos técnicos globales en inglés, redactar justificaciones técnicas en inglés y escribir código auto-documentado con buenas prácticas internacionales.",
+      en: "Able to understand official software documentation, consume global technical resources in English, write technical justifications in English, and write self-documenting code following international best practices.",
     },
   },
 ];

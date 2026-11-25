@@ -1,6 +1,6 @@
 "use client";
 
-import { GraduationCap, MapPin, Target } from "lucide-react";
+import { GraduationCap, Languages, MapPin, Target } from "lucide-react";
 
 import { siteConfig } from "@/lib/site-config";
 import { techStack } from "@/lib/data/tech-stack";
@@ -23,6 +23,7 @@ export function About() {
   const quickFacts = [
     { icon: MapPin, label: siteConfig.location },
     { icon: GraduationCap, label: t.systemsEngineering },
+    { icon: Languages, label: siteConfig.languages[lang] },
     { icon: Target, label: siteConfig.availability[lang] },
   ];
 

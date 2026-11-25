@@ -3,13 +3,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { ChevronDown, ExternalLink, Github } from "lucide-react";
+import { ChevronDown, ExternalLink, Github, ImageOff, Lock } from "lucide-react";
 import { motion } from "motion/react";
 
 import type { Project } from "@/lib/types";
 import { useLanguage } from "@/lib/i18n/language-context";
 import { uiStrings } from "@/lib/i18n/ui-strings";
 import { Badge } from "@/components/ui/badge";
+import { CoverFrame } from "@/components/ui/cover-frame";
 import { PlaceholderFrame } from "@/components/ui/placeholder-frame";
 import { Reveal } from "@/components/ui/reveal";
 
@@ -28,20 +29,27 @@ export function ProjectCard({ project, delay = 0 }: ProjectCardProps) {
   const { lang } = useLanguage();
   const t = uiStrings[lang].projectCard;
   const [isExpanded, setIsExpanded] = useState(false);
-  const { title, description, image, stack, status, urlGithub, urlDemo, challenges, learnings } = project;
+  const { title, description, image, cover, stack, status, urlGithub, urlDemo, challenges, learnings, isPrivate } =
+    project;
 
   return (
     <Reveal delay={delay} className="group flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] transition-colors hover:border-violet-400/30">
       <div className="relative aspect-video w-full overflow-hidden bg-zinc-900">
         {project.isPlaceholder ? (
           <PlaceholderFrame label={t.placeholderImage} className="h-full w-full rounded-none border-0" />
-        ) : (
+        ) : image ? (
           <Image
             src={image}
             alt={t.screenshotAlt(title[lang])}
             fill
             sizes="(min-width: 768px) 33vw, 100vw"
             className="object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+        ) : (
+          <CoverFrame
+            icon={cover?.icon ?? ImageOff}
+            label={cover?.label[lang] ?? title[lang]}
+            className="h-full w-full"
           />
         )}
       </div>
@@ -91,6 +99,9 @@ export function ProjectCard({ project, delay = 0 }: ProjectCardProps) {
         </motion.div>
 
         <div className="mt-auto flex gap-3 pt-2">
+          {isPrivate ? (
+            <Badge icon={<Lock className="h-3 w-3" aria-hidden="true" />}>{t.privateLinks}</Badge>
+          ) : null}
           {urlGithub ? (
             <Link
               href={urlGithub}
