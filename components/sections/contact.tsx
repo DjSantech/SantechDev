@@ -33,7 +33,12 @@ export function Contact() {
         <Reveal className="flex flex-col gap-6">
           <div className="flex flex-wrap gap-3">
             <Button href={`mailto:${siteConfig.email}`}>{siteConfig.email}</Button>
-            <Button href={siteConfig.resumeUrl} variant="secondary" icon={<Download className="h-4 w-4" />}>
+            <Button
+              href={siteConfig.resumeUrl[lang]}
+              variant="secondary"
+              external
+              icon={<Download className="h-4 w-4" />}
+            >
               {t.downloadCv}
             </Button>
           </div>

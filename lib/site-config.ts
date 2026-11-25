@@ -37,7 +37,11 @@ export const siteConfig = {
     en: "Available for freelance and Junior Full-Stack roles · remote or hybrid",
   },
   isAvailable: true,
-  resumeUrl: "/cv-santiago-guevara.pdf",
+  /** CV según el idioma activo de la página. */
+  resumeUrl: {
+    es: "/cv-santiago-guevara.pdf",
+    en: "/cv-santiago-guevara-en.pdf",
+  },
   siteUrl: "https://santechdevportfolio.vercel.app",
 } as const;
 
