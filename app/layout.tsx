@@ -13,8 +13,8 @@ import { siteConfig } from "@/lib/site-config";
 
 const urbanist = Urbanist({ subsets: ["latin"], variable: "--font-urbanist" });
 
-const title = `${siteConfig.name} — ${siteConfig.role.es}`;
-const description = siteConfig.pitch.es;
+const title = siteConfig.seo.title.es;
+const description = siteConfig.seo.description.es;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.siteUrl),
@@ -23,14 +23,38 @@ export const metadata: Metadata = {
     template: `%s — ${siteConfig.name}`,
   },
   description,
-  keywords: ["Frontend Developer", "React", "Next.js", "TypeScript", "Portafolio", "Desarrollador web"],
-  authors: [{ name: siteConfig.name }],
+  keywords: [
+    "Desarrollador Full-Stack",
+    "Full-Stack Developer",
+    "Desarrollo con IA",
+    "AI-Powered Development",
+    "Claude Code",
+    "MCP",
+    "React",
+    "Next.js",
+    "TypeScript",
+    "Node.js",
+    "MongoDB",
+    "Cloudflare",
+    "Sistemas POS",
+    "E-commerce",
+    "Pereira",
+    "Colombia",
+    "Portafolio",
+  ],
+  authors: [{ name: siteConfig.name, url: siteConfig.siteUrl }],
+  creator: siteConfig.name,
+  alternates: {
+    canonical: "/",
+  },
   icons: {
     icon: "/favicon.png",
   },
   openGraph: {
     type: "website",
     locale: "es_CO",
+    alternateLocale: ["en_US"],
+    url: siteConfig.siteUrl,
     title,
     description,
     siteName: siteConfig.brand,
